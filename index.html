@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danny Kim - Resume</title>
+    <style>
+      /* CSS Reset */
+      *,
+      ::after,
+      ::before,
+      ::backdrop {
+        margin: 0;
+        padding: 0;
+
+        box-sizing: border-box;
+        border: 0 solid;
+      }
+
+      html {
+        color-scheme: light dark;
+        font-family: "Times New Roman", serif;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: inherit;
+        font-weight: inherit;
+      }
+
+      ul,
+      ol,
+      li {
+        list-style: none;
+      }
+    </style>
+    <style>
+      /* Theme */
+      :root {
+        /* Customize these variables to tweak colors. */
+        --color-paper: light-dark(#efefef, #161616);
+        --color-backdrop: light-dark(#7a7979, black);
+        --color-highlight: light-dark(#d31665, #ddb22b);
+        --color-text-primary: light-dark(black, #dddddd);
+        --color-text-secondary: light-dark(#333, #aaaaaa);
+      }
+
+      body {
+        background: var(--color-backdrop);
+        color: var(--color-text-primary);
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @media print {
+          background: transparent;
+          padding: 0;
+        }
+        @media screen and (max-width: 40rem) {
+          padding: 0;
+        }
+      }
+
+      main {
+        padding: 3rem;
+        background: var(--color-paper);
+        max-width: 54rem;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        @media print {
+          padding: 0;
+          background: transparent;
+          width: 100%;
+          box-shadow: none;
+        }
+      }
+
+      section {
+        margin-bottom: 0.5rem;
+      }
+
+      h1 {
+        color: var(--color-highlight);
+        font-size: 3rem;
+        font-weight: bold;
+      }
+
+      h2 {
+        color: var(--color-highlight);
+        border-bottom: 0.125rem solid var(--color-highlight);
+        font-size: 1.5rem;
+        font-weight: bold;
+
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+
+      h4 {
+        font-size: 0.75rem;
+        font-style: italic;
+        color: var(--color-text-secondary);
+      }
+
+      time {
+        font-size: 1rem;
+        float: inline-end;
+        font-weight: normal;
+      }
+
+      ul {
+        padding-left: 0.5rem;
+      }
+
+      li {
+        padding-left: 0.5rem;
+        text-align: justify;
+      }
+
+      li::marker {
+        content: "•";
+      }
+
+      header {
+        display: flex;
+        gap: 1rem;
+        h1 {
+          flex: 1;
+        }
+        .right {
+          text-align: end;
+        }
+      }
+
+      /* Use this on elements that you want to avoid breaking across pages. */
+      .nobreak {
+        @media print {
+          break-inside: avoid-page;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <header>
+        <h1>Danny Kim</h1>
+        <div class="right">
+          <p>Toronto, ON</p>
+          <p><a href="https://www.linkedin.com/in/0916dhkim/">LinkedIn</a></p>
+          <p><a href="https://github.com/0916dhkim">GitHub</a></p>
+        </div>
+      </header>
+      <section>
+        <h2>Experience</h2>
+        <section>
+          <h3>LifeAt<time>Nov 2022 - Present</time></h3>
+          <h4>Senior Software Engineer</h4>
+          <ul>
+            <li>
+              As an early member, I helped a productivity application reach its
+              first 3,000 active subscribers and 50,000 daily active users.
+              Frequently shipped new features and bugfixes to all parts of the
+              service including the React frontend, Electron desktop app, and
+              the serverless Firebase functions.
+            </li>
+            <li>
+              Managed a team of 1 senior developer and 2 junior developers to
+              launch a new product. This included onboarding the team to the
+              codebase, regularly aligning on the product requirements, and
+              conducting code reviews to quickly make key technical decisions.
+            </li>
+            <li>
+              Optimized the product website for search engines. Impressions
+              increased from 14k to 27k. Click counts increased by 100%. The
+              strategy to tie our various contents spread across multiple
+              platforms into a single domain with reverse proxy and canonical
+              URLs was the key to this success.
+            </li>
+            <li>
+              Conducted a cost audit across the infrastructure to save database
+              cost by 80% and backend server cost by 75%. GCP cost analysis was
+              done on Big Query to narrow down the most expensive resources,
+              followed by a set of caching strategies to reduce the overall
+              network traffic.
+            </li>
+            <li>
+              Improved the CI/CD pipeline to increase product release
+              consistency. This allowed the engineering team to release changes
+              with more confidence. Older pipeline failed a few times a week and
+              had a chance of omitting important backend changes. The new
+              pipeline was made more reliable by deploying all changed modules
+              and better handling GCP rate limits and errors.
+            </li>
+            <li>Scaled a newsletter from 0 to 700,000 active subscribers.</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Hatchways<time>Jun 2021 - Aug 2022</time></h3>
+          <h4>Software Developer</h4>
+          <ul>
+            <li>
+              Developed a technical assessment platform for hiring software
+              developers.
+            </li>
+            <li>
+              Conducted technical feasibility analyses by building out software
+              prototypes for business concepts from the leadership.
+            </li>
+            <li>
+              Led Typescript adoption & Python 2-to-3 migration. Proposed a
+              multi-phase plan to eliminate this huge tech debt without halting
+              the production.
+            </li>
+            <li>
+              Integrated the product with external services like GitHub, Slack,
+              and Airtable while ensuring the product's reliability.
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>Collectors Inc.<time>2021</time></h3>
+          <h4>Full Stack Engineer, React Native, GraphQL, Prisma, Nexus</h4>
+        </section>
+        <section>
+          <h3>Dooboolab<time>2020</time></h3>
+          <h4>
+            Full Stack Engineer, Open Source Maintainer, React Native, GraphQL,
+            Nexus
+          </h4>
+        </section>
+      </section>
+      <section>
+        <h2>Volunteering & Community</h2>
+        <section>
+          <h3>Open Source Software Contribution</h3>
+          <ul>
+            <li>
+              Made contributions to high-impact open-source projects including
+              Storybook, Faker, and Docusaurus. These contributions are made
+              during the weekly code-together events mentioned above, providing
+              educational value for the wider developer community.
+            </li>
+            <li>
+              Participated in a civic tech project to address food security in
+              the New York metropolitan area.
+            </li>
+          </ul>
+        </section>
+        <section class="nobreak">
+          <h3>TorontoJS<time>2023 - Present</time></h3>
+          <h4>Event Organizer, Volunteer</h4>
+          <ul>
+            <li>
+              Organized a weekly online code-together event for JavaScript
+              developers. (59 participants max)
+            </li>
+            <li>
+              Assisted organizing in-person social events for local software
+              developers where participants could share career advice and
+              technical knowledge with each other. (93 participants max)
+            </li>
+          </ul>
+        </section>
+      </section>
+      <section class="nobreak">
+        <h2>Skills</h2>
+        <section>
+          <h3>Expertise</h3>
+          <p>
+            Web frontend development, Backend development, Web security, CI/CD
+            pipeline management, Database management, Cloud resources
+            management.
+          </p>
+        </section>
+        <section>
+          <h3>Daily Tools</h3>
+          <p>TypeScript, Node.JS, React</p>
+        </section>
+        <section>
+          <h3>Other Professional Skills</h3>
+          <p>
+            JavaScript, Java, Python, CSS, Tailwind, GraphQL, React Native, SQL,
+            MongoDB, Docker, Firebase, Google Cloud Platform, Express, Flask,
+            Prisma, Drizzle, Nexus, OAuth integration
+          </p>
+        </section>
+      </section>
+      <section>
+        <h2>Education</h2>
+        <section>
+          <h3>The Cooper Union</h3>
+          <h4>B.Eng Civil Engineering</h4>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
